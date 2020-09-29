@@ -26,9 +26,9 @@ var vid = document.getElementById("myVideo");
 // Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
 vid.ontimeupdate = function() {myFunction()};
 
-function myFunction() {
+function MoveMap(currentTime) {
   // Display the current position of the video in a p element with id="demo"
-  if(Math.round(vid.currentTime) == 34 && passed.indexOf("Italy") < 0){
+  if(Math.round(currentTime) == 36 && passed.indexOf("Italy") < 0){
       passed.push("Italy")
       map.removeLayer(countries)
       countries = L.geoJSON(countriesGJ,{
@@ -43,7 +43,7 @@ function myFunction() {
             onEachFeature: function(feature, layer) {
               // does this feature have a property named popupContent?
               if (feature.properties && feature.properties.NAME) {
-                  layer.bindPopup(feature.properties.NAME);
+                  layer.bindPopup(feature.properties.display_name);;
               }
           }
         }).addTo(map)
@@ -52,7 +52,7 @@ function myFunction() {
             })
         map.flyToBounds(countries.getBounds())
       
-  }else if(Math.round(vid.currentTime) == 38 && passed.indexOf("France") < 0){
+  }else if(Math.round(currentTime) == 40 && passed.indexOf("France") < 0){
     passed.push("France")
     map.removeLayer(countries)
     countries = L.geoJSON(countriesGJ,{
@@ -67,7 +67,7 @@ function myFunction() {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.NAME);
+                layer.bindPopup(feature.properties.display_name);;
             }
         }
       }).addTo(map)
@@ -76,7 +76,7 @@ function myFunction() {
         })
       map.flyToBounds(countries.getBounds())
 
-  }else if(Math.round(vid.currentTime) == 43 && passed.indexOf("Japan") < 0){
+  }else if(Math.round(currentTime) == 44 && passed.indexOf("Japan") < 0){
     passed.push("Japan")
     map.removeLayer(countries)
     countries = L.geoJSON(countriesGJ,{
@@ -91,7 +91,7 @@ function myFunction() {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.NAME);
+                layer.bindPopup(feature.properties.display_name);;
             }
         }
       }).addTo(map)
@@ -100,7 +100,7 @@ function myFunction() {
         })
       map.flyToBounds(countries.getBounds())
 
-  }else if(Math.round(vid.currentTime) == 51 && passed.indexOf("Hawai") < 0){
+  }else if(Math.round(currentTime) == 51 && passed.indexOf("Hawai") < 0){
     passed.push("Hawai")
     map.removeLayer(countries)
     countries = L.geoJSON(countriesGJ,{
@@ -115,7 +115,7 @@ function myFunction() {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.NAME);
+                layer.bindPopup(feature.properties.display_name);;
             }
         }
       }).addTo(map)
@@ -124,7 +124,7 @@ function myFunction() {
         })
       map.flyToBounds(countries.getBounds())
 
-  }else if(Math.round(vid.currentTime) == 55 && passed.indexOf("UK") < 0){
+  }else if(Math.round(currentTime) == 55 && passed.indexOf("UK") < 0){
     passed.push("UK")
     map.removeLayer(countries)
     countries = L.geoJSON(countriesGJ,{
@@ -139,7 +139,7 @@ function myFunction() {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.NAME);
+                layer.bindPopup(feature.properties.display_name);
             }
         }
       }).addTo(map)
@@ -148,12 +148,12 @@ function myFunction() {
         })
       map.flyToBounds(countries.getBounds())
 
-  }else if(Math.round(vid.currentTime) == 90 && passed.indexOf("Kenya") < 0){
-    passed.push("Kenya")
+  }else if(Math.round(currentTime) == 87 && passed.indexOf("Ethiopia") < 0){
+    passed.push("Ethiopia")
     map.removeLayer(countries)
     countries = L.geoJSON(countriesGJ,{
       filter: function(feature){
-          if(feature.properties.NAME == "Kenya"){
+          if(feature.properties.NAME == "Ethiopia"){
                   return true;
               }else{
                return false;
@@ -163,7 +163,7 @@ function myFunction() {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.NAME);
+                layer.bindPopup(feature.properties.display_name);;
             }
         }
       }).addTo(map)
@@ -172,7 +172,7 @@ function myFunction() {
         })
       map.flyToBounds(countries.getBounds())
 
-  }else if(Math.round(vid.currentTime) == 95 && passed.indexOf("Greece") < 0){
+  }else if(Math.round(currentTime) == 91 && passed.indexOf("Greece") < 0){
     passed.push("Greece")
     map.removeLayer(countries)
     countries = L.geoJSON(countriesGJ,{
@@ -187,7 +187,7 @@ function myFunction() {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.NAME);
+                layer.bindPopup(feature.properties.display_name);;
             }
         }
       }).addTo(map)
@@ -196,12 +196,12 @@ function myFunction() {
         })
       map.flyToBounds(countries.getBounds())
 
-  }else if(Math.round(vid.currentTime) == 100 && passed.indexOf("China") < 0){
-    passed.push("China")
+  }else if(Math.round(currentTime) == 96 && passed.indexOf("Russia") < 0){
+    passed.push("Russia")
     map.removeLayer(countries)
     countries = L.geoJSON(countriesGJ,{
       filter: function(feature){
-          if(feature.properties.NAME == "China"){
+          if(feature.properties.NAME == "Russia"){
                   return true;
               }else{
                return false;
@@ -211,7 +211,7 @@ function myFunction() {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.NAME);
+                layer.bindPopup(feature.properties.display_name);;
             }
         }
       }).addTo(map)
@@ -220,7 +220,7 @@ function myFunction() {
         })
       map.flyToBounds(countries.getBounds())
 
-  }else if(Math.round(vid.currentTime) == 107 && passed.indexOf("Brazil") < 0){
+  }else if(Math.round(currentTime) == 102 && passed.indexOf("Brazil") < 0){
     passed.push("Brazil")
     map.removeLayer(countries)
     countries = L.geoJSON(countriesGJ,{
@@ -235,7 +235,7 @@ function myFunction() {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.NAME);
+                layer.bindPopup(feature.properties.display_name);;
             }
         }
       }).addTo(map)
@@ -244,7 +244,7 @@ function myFunction() {
         })
       map.flyToBounds(countries.getBounds())
 
-  }else if(Math.round(vid.currentTime) == 111 && passed.indexOf("Morocco") < 0){
+  }else if(Math.round(currentTime) == 106 && passed.indexOf("Morocco") < 0){
     passed.push("Morocco")
     map.removeLayer(countries)
     countries = L.geoJSON(countriesGJ,{
@@ -259,7 +259,7 @@ function myFunction() {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.NAME);
+                layer.bindPopup(feature.properties.display_name);;
             }
         }
       }).addTo(map)
@@ -269,4 +269,41 @@ function myFunction() {
       map.flyToBounds(countries.getBounds())
 
   }
+}
+
+// https://developers.google.com/youtube/iframe_api_reference#Adding_event_listener
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('myVideo', {
+    height: '390',
+    width: '640',
+    videoId: 'X-HJH0wq6tg',
+    events: {
+        'onReady': onPlayerReady
+    }
+    });
+    
+}
+
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+    logTime()
+}
+
+function logTime(){
+    if(player){
+        if(player.getPlayerState() == 1){
+            console.log(player.getCurrentTime())
+            MoveMap(player.getCurrentTime())
+        }
+    }
+    setTimeout(logTime, 500);
 }
