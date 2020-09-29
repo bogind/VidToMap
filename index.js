@@ -271,7 +271,7 @@ function MoveMap(currentTime) {
   }
 }
 
-// https://developers.google.com/youtube/iframe_api_reference#Adding_event_listener
+
 
 var tag = document.createElement('script');
 
