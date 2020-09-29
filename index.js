@@ -11,16 +11,6 @@ let required = 2;
 let recieved = 0;
 var boxesGJ;
 var countriesGJ;
-$.getJSON('boxes.geojson',function(response){
-    boxesGJ = response;
-    boxes = L.geoJSON(response,{
-        style : {
-            "opacity": 0,
-            "fillOpacity": 0
-        }
-    }).addTo(map)
-    recieved += 1
-})
 $.getJSON('countries.geojson',function(response){
     countriesGJ = response;
     countries = L.geoJSON(response,{
