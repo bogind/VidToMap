@@ -4,13 +4,13 @@ let OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{
 });
 let map = L.map('map', {
     layers: OpenStreetMap_Mapnik,
-    center: [ 31.895827, 34.811196],
-    zoom: 12
+    center: [ 31.5832150, 34.4311523],
+    zoom: 7
     });
 let required = 2;
 let recieved = 0;
 var boxesGJ;
-var countriesGJ;
+var countriesGJ, countries;
 $.getJSON('countries.geojson',function(response){
     countriesGJ = response;
     countries = L.geoJSON(response,{
@@ -43,7 +43,7 @@ function MoveMap(currentTime) {
             onEachFeature: function(feature, layer) {
               // does this feature have a property named popupContent?
               if (feature.properties && feature.properties.NAME) {
-                  layer.bindPopup(feature.properties.display_name);;
+                  layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");;
               }
           }
         }).addTo(map)
@@ -67,7 +67,7 @@ function MoveMap(currentTime) {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.display_name);;
+                layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");;
             }
         }
       }).addTo(map)
@@ -91,7 +91,7 @@ function MoveMap(currentTime) {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.display_name);;
+                layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");;
             }
         }
       }).addTo(map)
@@ -115,7 +115,7 @@ function MoveMap(currentTime) {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.display_name);;
+                layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");
             }
         }
       }).addTo(map)
@@ -139,7 +139,7 @@ function MoveMap(currentTime) {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.display_name);
+                layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");
             }
         }
       }).addTo(map)
@@ -163,7 +163,7 @@ function MoveMap(currentTime) {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.display_name);;
+                layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");;
             }
         }
       }).addTo(map)
@@ -187,7 +187,7 @@ function MoveMap(currentTime) {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.display_name);;
+                layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");;
             }
         }
       }).addTo(map)
@@ -211,7 +211,7 @@ function MoveMap(currentTime) {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.display_name);;
+                layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");;
             }
         }
       }).addTo(map)
@@ -235,7 +235,7 @@ function MoveMap(currentTime) {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.display_name);;
+                layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");;
             }
         }
       }).addTo(map)
@@ -259,7 +259,7 @@ function MoveMap(currentTime) {
           onEachFeature: function(feature, layer) {
             // does this feature have a property named popupContent?
             if (feature.properties && feature.properties.NAME) {
-                layer.bindPopup(feature.properties.display_name);;
+                layer.bindPopup("<h2>"+feature.properties.display_name+"</h2>"+"<img width='150px' src='"+feature.properties.flag+"'/>");;
             }
         }
       }).addTo(map)

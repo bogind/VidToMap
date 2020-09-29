@@ -1,0 +1,14 @@
+*{
+    text-align: center;
+}
+#map{
+    height: 50vh;
+    width: 100%
+}
+
+.leaflet-popup-content > img{
+    border: 2px solid rgba(0,0,0,0.2);
+}
+.leaflet-popup-content {
+    text-align: center;
+}
